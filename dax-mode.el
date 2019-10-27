@@ -48,7 +48,7 @@
 (setq dax-font-lock-keywords
       (let* (
             ;; define several category of keywords
-            (x-keywords '("VAR" "RETURN"))
+            (x-keywords '("VAR" "RETURN" "EVALUATE" "DEFINE"))
             ;(x-types '("float" "integer" "key" "list" "rotation" "string" "vector"))
             ;(x-constants '("ACTIVE" "AGENT" "ALL_SIDES" "ATTACH_BACK"))
             ;(x-events '("at_rot_target" "at_target" "attach"))
@@ -310,14 +310,14 @@
             ;(x-types-regexp (regexp-opt x-types 'words))
             ;(x-constants-regexp (regexp-opt x-constants 'words))
             ;(x-events-regexp (regexp-opt x-events 'words))
-            (x-functions-regexp (regexp-opt x-functions 'words)))
+            (x-functions-regexp (regexp-opt x-functions 'symbols)))
 
         `(
           ;(,x-types-regexp . font-lock-type-face)
           ;(,x-constants-regexp . font-lock-constant-face)
           ;(,x-events-regexp . font-lock-builtin-face)
-          (,x-functions-regexp . font-lock-function-name-face)
           (,x-keywords-regexp . font-lock-keyword-face)
+          (,x-functions-regexp . font-lock-function-name-face)
           ;; note: order above matters, because once colored, that part won't change.
           ;; in general, put longer words first
           )))
