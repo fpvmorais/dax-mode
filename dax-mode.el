@@ -14,6 +14,9 @@
 
 ;; You can redistribute this program and/or modify it under the terms of the GNU General Public License version 2.
 
+;;;###autoload
+(add-to-list 'auto-mode-alist '("\\.dax\\'" . dax-mode))
+
 (defun dax-pretty-print ()
   "Pretty print the DAX buffer via DaxFormatter API."
   (interactive)
