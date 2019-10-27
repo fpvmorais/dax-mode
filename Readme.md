@@ -1,6 +1,6 @@
 # DAX Mode for Emacs
 
-This is the first version of the mode that let's you edit the DAX language in your favourite editor.
+Major mode that let's you edit the DAX language in your favourite editor.
 
 Also included is a `dax-pretty-print` function that uses http://www.daxformatter.com/api/daxformatter/DaxFormat/ to beautify your code.
 
