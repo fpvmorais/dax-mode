@@ -35,11 +35,12 @@
     (goto-char (point-min))
     (re-search-forward "^$")
     (delete-region (point) (point-min))
-    (setq noQuotes (substring (buffer-string) 2 -9))
+    (setq noQuotes (buffer-string))
     (setq noRN (replace-regexp-in-string "\\\\r\\\\n" "
 " noQuotes))
     (setq noBars (replace-regexp-in-string "\\\\" "" noRN))
-    (princ noBars buf)
+    (setq noCRs (replace-regexp-in-string "" "" noBars))
+    (princ noCRs buf)
     (kill-buffer newbuff)
     )
   )
